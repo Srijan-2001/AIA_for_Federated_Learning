@@ -11,7 +11,7 @@
 | Field | Details |
 |-------|---------|
 | Category | Cat. 1 — Privacy & Inference |
-| Paper | Diana et al. (AAAI 2025) |
+| Paper |  |
 | Framework | Flower (flwr) |
 
 ---
