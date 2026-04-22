@@ -1,10 +1,5 @@
 # Federated Learning — Attribute Inference Attacks (Category 1: Privacy & Inference)
 
-**Paper**: "Attribute Inference Attacks for Federated Regression Tasks"  
-**Authors**: "Raju Debnath, Srijan Ghosh, Gunja Kumari, Ashwani, Ranjesh Kumar Roy, Shubham Anand"
-**Framework**: [Flower (flwr)](https://flower.ai/)
-**Youtube Link**: " https://youtu.be/E3z9a1g5jqg "
----
 
 ## Group Info
 
@@ -12,8 +7,9 @@
 |-------|---------|
 | Category | Cat. 1 — Privacy & Inference |
 | Paper | Attribute Inference Attacks for Federated Regression Tasks: A Flower-Based Reproduction and Analysis |
-| Framework | Flower (flwr) |
-
+| Authors | Raju Debnath, Srijan Ghosh, Gunja Kumari, Ashwani, Ranjesh Kumar Roy, Shubham Anand |
+| Framework | Flower (flwr)(https://flower.ai/) |
+| Youtube Link | https://youtu.be/E3z9a1g5jqg |
 ---
 
 ## Repository Structure
