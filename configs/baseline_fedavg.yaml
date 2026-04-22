@@ -1,0 +1,77 @@
+# configs/baseline_fedavg.yaml
+# Mandatory FedAvg baseline configuration (Section 4 of instructions)
+# All groups must run this baseline first before category-specific experiments.
+
+# -----------------------------------------------------------------------
+# Section 4.1 — Universal Baseline
+# -----------------------------------------------------------------------
+algorithm: FedAvg
+citation: "McMahan et al., 2017"
+
+fl:
+  num_rounds: 100                   # communication rounds
+  client_fraction: 0.5              # 50% of total clients sampled per round
+  local_epochs: 5                   # epochs per communication round
+  batch_size: 32
+
+optimizer:
+  name: SGD
+  lr: 0.01
+  momentum: 0.9
+
+loss_fn: CrossEntropyLoss
+
+model:
+  weight_init: default
+
+seed: 42
+
+# -----------------------------------------------------------------------
+# Section 4.3 — Non-IID Partitioning (report all alpha values)
+# -----------------------------------------------------------------------
+partition:
+  method: dirichlet
+  alpha_values: [0.01, 0.1, 0.5, 1.0, "iid"]
+
+# -----------------------------------------------------------------------
+# Datasets & client counts to sweep (Section 3)
+# -----------------------------------------------------------------------
+experiments:
+  - dataset: mnist
+    num_clients: [10, 50, 100]
+  - dataset: fmnist
+    num_clients: [10, 50, 100]
+  - dataset: cifar10
+    num_clients: [10, 50, 100]
+  - dataset: cifar100
+    num_clients: [10, 50, 100]
+
+# -----------------------------------------------------------------------
+# Section 5.1 — Universal Metrics (report every round)
+# -----------------------------------------------------------------------
+metrics:
+  global_test_accuracy: true          # evaluated every round on held-out test set
+  global_test_loss: true              # cross-entropy loss on global test set
+  convergence_round:
+    enabled: true
+    threshold: 0.80                   # first round accuracy >= 80%
+  communication_cost_mb: true         # model_size × clients × rounds (MB)
+
+# -----------------------------------------------------------------------
+# Section 5.2 — Category 1 (Privacy & Inference) Specific Metrics
+# -----------------------------------------------------------------------
+category_metrics:
+  attack_success_rate: true           # AIA accuracy
+  reconstruction_mse: true            # MSE of inferred sensitive attributes
+  membership_inference_auc: true      # AUC for membership inference attack
+
+# -----------------------------------------------------------------------
+# Output
+# -----------------------------------------------------------------------
+output:
+  results_dir: results/
+  checkpoint_dir: checkpoints/
+  figures:
+    dpi: 300
+    format: png
+    font_size: 11

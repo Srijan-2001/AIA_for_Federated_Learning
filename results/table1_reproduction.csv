@@ -1,0 +1,10 @@
+dataset,attack,active_rounds,run_key,ours_pct,grad_passive_pct,global_model_pct,ours_mse,global_model_mse,seeds
+Income-L,passive,0,income_L_passive,53.25,76.04,53.25,1.870318,1.870318,[42]
+Income-L,active,10,income_L_active10,57.77,71.87,53.25,1.689584,2.294767,[42]
+Income-L,active,50,income_L_active50,49.08,69.95,53.25,2.037359,1.45956,[42]
+Income-A,passive,0,income_A_passive,59.37,60.72,59.32,1.627997,1.629997,[42]
+Income-A,active,10,income_A_active10,45.27,53.28,59.32,2.192996,1.944996,[42]
+Income-A,active,50,income_A_active50,49.66,49.09,59.32,2.016996,1.921996,[42]
+Medical,passive,0,medical_cost_passive,89.7,86.71,89.7,0.629707,0.629707,[42]
+Medical,active,10,medical_cost_active10,44.19,80.56,89.7,3.412606,2.549299,[42]
+Medical,active,50,medical_cost_active50,55.81,77.41,89.7,2.701647,2.661021,[42]

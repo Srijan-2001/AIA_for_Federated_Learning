@@ -1,0 +1,98 @@
+# configs/aia_experiment.yaml
+# Category 1 — Privacy & Inference: Attribute Inference Attack experiments
+# Based on: "Attribute Inference Attacks for Federated Regression Tasks" (Diana et al., AAAI 2025)
+
+# -----------------------------------------------------------------------
+# FL Training (matches baseline where applicable)
+# -----------------------------------------------------------------------
+fl:
+  num_rounds: 100
+  client_fraction: 0.5              # 50% per round (instruction baseline)
+  local_epochs: 1                   # paper uses E=1 for regression experiments
+  batch_size: 32
+
+optimizer:
+  name: SGD
+  lr: null                          # auto-set per dataset (paper Appendix B.5)
+  momentum: 0.9                     # per instruction baseline
+
+loss_fn: MSELoss                    # regression task
+
+model:
+  type: neural_network              # single hidden layer, 128 neurons, ReLU
+  hidden_size: 128
+
+seed: 42
+
+# -----------------------------------------------------------------------
+# Datasets (paper Section 5.1)
+# -----------------------------------------------------------------------
+datasets:
+  medical_cost:
+    data_file: data/Medical_Cost.zip
+    num_clients: 2
+    task: regression
+    sensitive_attr: smoker_yes
+    default_lr: 2.0e-6
+    heterogeneity: 0.0              # i.i.d. split
+
+  income_L:
+    data_file: data/ACSIncome_state_number.arff
+    num_clients: 10
+    task: regression
+    sensitive_attr: SEX
+    default_lr: 5.0e-7
+    heterogeneity: 0.4              # 40% heterogeneity (paper default)
+    state_code: 22                  # Louisiana
+
+  income_A:
+    data_file: data/ACSIncome_state_number.arff
+    num_clients: 51
+    task: regression
+    sensitive_attr: SEX
+    default_lr: 1.0e-6
+    heterogeneity: 0.0              # one client per state
+
+# -----------------------------------------------------------------------
+# Attack Configuration (paper Sec. 4)
+# -----------------------------------------------------------------------
+attack:
+  modes: [passive, active]          # paper compares both
+  active_rounds: [10, 50]           # Table 1 rows
+  adam_lr: 1.0
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  grad_aia_iters: 5000
+  max_grad_rounds: 10
+
+# -----------------------------------------------------------------------
+# Category-1 Metrics (Section 5.2)
+# -----------------------------------------------------------------------
+metrics:
+  attack_success_rate: true         # AIA accuracy (fraction correct)
+  reconstruction_mse: true          # MSE on inferred sensitive attribute
+  membership_inference_auc: true    # AUC for membership inference
+  # Universal metrics also tracked:
+  global_test_loss: true
+  communication_cost_mb: true
+  convergence_round:
+    enabled: true
+    threshold: 0.80
+
+# -----------------------------------------------------------------------
+# Non-IID sweep (Section 4.3) for regression datasets
+# -----------------------------------------------------------------------
+partition:
+  method: heterogeneity_sweep       # uses paper Algorithm 5 for Income-L
+  heterogeneity_levels: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+
+# -----------------------------------------------------------------------
+# Output
+# -----------------------------------------------------------------------
+output:
+  results_dir: results/
+  checkpoint_dir: checkpoints/
+  figures:
+    dpi: 300
+    format: png
+    font_size: 11

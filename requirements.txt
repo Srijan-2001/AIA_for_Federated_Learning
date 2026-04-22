@@ -1,0 +1,21 @@
+# Core FL framework
+flwr==1.9.0
+
+# Deep learning
+torch==2.1.0
+torchvision==0.16.0
+
+# Data processing
+numpy==1.26.4
+pandas==2.1.4
+scikit-learn==1.4.2
+scipy==1.13.0
+
+# Utilities
+tqdm==4.66.2
+
+# Plotting — required for figure generation (Items 9-10)
+matplotlib==3.8.4
+
+# Optional — differential privacy (for DP-SGD defense experiments)
+opacus==1.4.0

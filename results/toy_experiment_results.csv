@@ -1,0 +1,4 @@
+batch_size,n_seeds,n_rounds,recon_error_mean,recon_error_std,aia_accuracy_mean_pct,aia_accuracy_std_pct,global_aia_accuracy_mean_pct,global_aia_accuracy_std_pct
+64,5,300,2.114299,0.565811,72.5,27.07,59.59,23.94
+256,5,300,3.031974,0.834983,76.07,19.34,59.32,23.94
+1024,5,300,2.853419,0.564127,54.96,28.72,59.38,23.5

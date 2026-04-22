@@ -1,0 +1,2 @@
+dataset,attack,seed,num_rounds,local_epochs,batch_size,learning_rate,ours_pct,global_model_pct,grad_passive_pct,ours_mse,global_model_mse,final_mse,final_loss,convergence_round,communication_cost_mb
+income_A,active,42,100,1,32,1e-06,49.66,52.03,49.09,2.016996,1.921996,2.338658,2.338658094946385,8,59.8045

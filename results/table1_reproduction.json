@@ -1,0 +1,207 @@
+{
+  "averaged": {
+    "medical_cost_passive": {
+      "ours": 89.7,
+      "ours_mse": 0.629707,
+      "global_model": 89.7,
+      "global_model_mse": 0.629707,
+      "grad_passive": 86.71,
+      "final_accuracy": 71.01,
+      "final_loss": 0.710121,
+      "communication_cost_mb": 1.9547
+    },
+    "medical_cost_active10": {
+      "ours": 44.19,
+      "ours_mse": 3.412606,
+      "global_model": 58.31,
+      "global_model_mse": 2.549299,
+      "grad_passive": 80.56,
+      "final_accuracy": 91652.75,
+      "final_loss": 916.527465,
+      "communication_cost_mb": 1.9547
+    },
+    "medical_cost_active50": {
+      "ours": 55.81,
+      "ours_mse": 2.701647,
+      "global_model": 56.48,
+      "global_model_mse": 2.661021,
+      "grad_passive": 77.41,
+      "final_accuracy": 767.86,
+      "final_loss": 7.678601,
+      "communication_cost_mb": 1.9547
+    },
+    "income_L_passive": {
+      "ours": 53.25,
+      "ours_mse": 1.870318,
+      "global_model": 53.25,
+      "global_model_mse": 1.870318,
+      "grad_passive": 76.04,
+      "final_accuracy": 113.39,
+      "final_loss": 1.133929,
+      "communication_cost_mb": 11.7264
+    },
+    "income_L_active10": {
+      "ours": 57.77,
+      "ours_mse": 1.689584,
+      "global_model": 42.64,
+      "global_model_mse": 2.294767,
+      "grad_passive": 71.87,
+      "final_accuracy": 3427.84,
+      "final_loss": 34.278377,
+      "communication_cost_mb": 11.7264
+    },
+    "income_L_active50": {
+      "ours": 49.08,
+      "ours_mse": 2.037359,
+      "global_model": 63.52,
+      "global_model_mse": 1.45956,
+      "grad_passive": 69.95,
+      "final_accuracy": 2141.33,
+      "final_loss": 21.413326,
+      "communication_cost_mb": 11.7264
+    },
+    "income_A_passive": {
+      "ours": 59.37,
+      "ours_mse": 1.627997,
+      "global_model": 59.32,
+      "global_model_mse": 1.629997,
+      "grad_passive": 60.72,
+      "final_accuracy": 77.77,
+      "final_loss": 0.77767,
+      "communication_cost_mb": 59.8045
+    },
+    "income_A_active10": {
+      "ours": 45.27,
+      "ours_mse": 2.192996,
+      "global_model": 51.46,
+      "global_model_mse": 1.944996,
+      "grad_passive": 53.28,
+      "final_accuracy": 192.7,
+      "final_loss": 1.926951,
+      "communication_cost_mb": 59.8045
+    },
+    "income_A_active50": {
+      "ours": 49.66,
+      "ours_mse": 2.016996,
+      "global_model": 52.03,
+      "global_model_mse": 1.921996,
+      "grad_passive": 49.09,
+      "final_accuracy": 233.87,
+      "final_loss": 2.338658,
+      "communication_cost_mb": 59.8045
+    }
+  },
+  "seeds": [
+    42
+  ],
+  "per_seed": {
+    "medical_cost_passive": [
+      {
+        "ours": 89.7,
+        "ours_mse": 0.629707,
+        "global_model": 89.7,
+        "global_model_mse": 0.629707,
+        "grad_passive": 86.71,
+        "final_accuracy": 71.01,
+        "final_loss": 0.710121,
+        "communication_cost_mb": 1.9547
+      }
+    ],
+    "medical_cost_active10": [
+      {
+        "ours": 44.19,
+        "ours_mse": 3.412606,
+        "global_model": 58.31,
+        "global_model_mse": 2.549299,
+        "grad_passive": 80.56,
+        "final_accuracy": 91652.75,
+        "final_loss": 916.527465,
+        "communication_cost_mb": 1.9547
+      }
+    ],
+    "medical_cost_active50": [
+      {
+        "ours": 55.81,
+        "ours_mse": 2.701647,
+        "global_model": 56.48,
+        "global_model_mse": 2.661021,
+        "grad_passive": 77.41,
+        "final_accuracy": 767.86,
+        "final_loss": 7.678601,
+        "communication_cost_mb": 1.9547
+      }
+    ],
+    "income_L_passive": [
+      {
+        "ours": 53.25,
+        "ours_mse": 1.870318,
+        "global_model": 53.25,
+        "global_model_mse": 1.870318,
+        "grad_passive": 76.04,
+        "final_accuracy": 113.39,
+        "final_loss": 1.133929,
+        "communication_cost_mb": 11.7264
+      }
+    ],
+    "income_L_active10": [
+      {
+        "ours": 57.77,
+        "ours_mse": 1.689584,
+        "global_model": 42.64,
+        "global_model_mse": 2.294767,
+        "grad_passive": 71.87,
+        "final_accuracy": 3427.84,
+        "final_loss": 34.278377,
+        "communication_cost_mb": 11.7264
+      }
+    ],
+    "income_L_active50": [
+      {
+        "ours": 49.08,
+        "ours_mse": 2.037359,
+        "global_model": 63.52,
+        "global_model_mse": 1.45956,
+        "grad_passive": 69.95,
+        "final_accuracy": 2141.33,
+        "final_loss": 21.413326,
+        "communication_cost_mb": 11.7264
+      }
+    ],
+    "income_A_passive": [
+      {
+        "ours": 59.37,
+        "ours_mse": 1.627997,
+        "global_model": 59.32,
+        "global_model_mse": 1.629997,
+        "grad_passive": 60.72,
+        "final_accuracy": 77.77,
+        "final_loss": 0.77767,
+        "communication_cost_mb": 59.8045
+      }
+    ],
+    "income_A_active10": [
+      {
+        "ours": 45.27,
+        "ours_mse": 2.192996,
+        "global_model": 51.46,
+        "global_model_mse": 1.944996,
+        "grad_passive": 53.28,
+        "final_accuracy": 192.7,
+        "final_loss": 1.926951,
+        "communication_cost_mb": 59.8045
+      }
+    ],
+    "income_A_active50": [
+      {
+        "ours": 49.66,
+        "ours_mse": 2.016996,
+        "global_model": 52.03,
+        "global_model_mse": 1.921996,
+        "grad_passive": 49.09,
+        "final_accuracy": 233.87,
+        "final_loss": 2.338658,
+        "communication_cost_mb": 59.8045
+      }
+    ]
+  }
+}

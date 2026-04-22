@@ -1,0 +1,156 @@
+{
+  "per_seed": {
+    "B=64": [
+      {
+        "reconstruction_error": 2.9451241493225098,
+        "aia_accuracy": 0.8203125,
+        "global_aia_accuracy": 0.64453125,
+        "batch_size": 64,
+        "seed": 0,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 1.7989680767059326,
+        "aia_accuracy": 0.265625,
+        "global_aia_accuracy": 0.263671875,
+        "batch_size": 64,
+        "seed": 1,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 1.3437225818634033,
+        "aia_accuracy": 0.9521484375,
+        "global_aia_accuracy": 0.4951171875,
+        "batch_size": 64,
+        "seed": 2,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 1.937961459159851,
+        "aia_accuracy": 1.0,
+        "global_aia_accuracy": 1.0,
+        "batch_size": 64,
+        "seed": 3,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 2.54571795463562,
+        "aia_accuracy": 0.5869140625,
+        "global_aia_accuracy": 0.576171875,
+        "batch_size": 64,
+        "seed": 4,
+        "n_eavesdropped": 12
+      }
+    ],
+    "B=256": [
+      {
+        "reconstruction_error": 2.0354020595550537,
+        "aia_accuracy": 0.994140625,
+        "global_aia_accuracy": 0.6376953125,
+        "batch_size": 256,
+        "seed": 0,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 3.5432627201080322,
+        "aia_accuracy": 0.5908203125,
+        "global_aia_accuracy": 0.2646484375,
+        "batch_size": 256,
+        "seed": 1,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 4.391729831695557,
+        "aia_accuracy": 0.6279296875,
+        "global_aia_accuracy": 0.4892578125,
+        "batch_size": 256,
+        "seed": 2,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 2.5868561267852783,
+        "aia_accuracy": 1.0,
+        "global_aia_accuracy": 1.0,
+        "batch_size": 256,
+        "seed": 3,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 2.602617025375366,
+        "aia_accuracy": 0.5908203125,
+        "global_aia_accuracy": 0.57421875,
+        "batch_size": 256,
+        "seed": 4,
+        "n_eavesdropped": 12
+      }
+    ],
+    "B=1024": [
+      {
+        "reconstruction_error": 2.5868403911590576,
+        "aia_accuracy": 0.1845703125,
+        "global_aia_accuracy": 0.6494140625,
+        "batch_size": 1024,
+        "seed": 0,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 1.9758529663085938,
+        "aia_accuracy": 0.3017578125,
+        "global_aia_accuracy": 0.2900390625,
+        "batch_size": 1024,
+        "seed": 1,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 3.5880684852600098,
+        "aia_accuracy": 0.6591796875,
+        "global_aia_accuracy": 0.4697265625,
+        "batch_size": 1024,
+        "seed": 2,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 3.309619665145874,
+        "aia_accuracy": 1.0,
+        "global_aia_accuracy": 0.9990234375,
+        "batch_size": 1024,
+        "seed": 3,
+        "n_eavesdropped": 12
+      },
+      {
+        "reconstruction_error": 2.806711196899414,
+        "aia_accuracy": 0.6025390625,
+        "global_aia_accuracy": 0.560546875,
+        "batch_size": 1024,
+        "seed": 4,
+        "n_eavesdropped": 12
+      }
+    ]
+  },
+  "aggregated": {
+    "B=64": {
+      "reconstruction_error_mean": 2.1142988443374633,
+      "reconstruction_error_std": 0.5658107950275972,
+      "aia_accuracy_mean": 0.725,
+      "aia_accuracy_std": 0.27070242040853465,
+      "global_aia_accuracy_mean": 0.5958984375,
+      "global_aia_accuracy_std": 0.23940915175356053
+    },
+    "B=256": {
+      "reconstruction_error_mean": 3.0319735527038576,
+      "reconstruction_error_std": 0.8349832384347611,
+      "aia_accuracy_mean": 0.7607421875,
+      "aia_accuracy_std": 0.1934451750925868,
+      "global_aia_accuracy_mean": 0.5931640625,
+      "global_aia_accuracy_std": 0.23940612431263833
+    },
+    "B=1024": {
+      "reconstruction_error_mean": 2.85341854095459,
+      "reconstruction_error_std": 0.564127083221893,
+      "aia_accuracy_mean": 0.549609375,
+      "aia_accuracy_std": 0.2871734091007231,
+      "global_aia_accuracy_mean": 0.59375,
+      "global_aia_accuracy_std": 0.2349764418461056
+    }
+  }
+}
