@@ -11,9 +11,7 @@
 | Field | Details |
 |-------|---------|
 | Category | Cat. 1 — Privacy & Inference |
-| Paper | Attribute Inference Attacks for Federated
-Regression Tasks:
-A Flower-Based Reproduction and Analysis |
+| Paper | Attribute Inference Attacks for Federated Regression Tasks: A Flower-Based Reproduction and Analysis |
 | Framework | Flower (flwr) |
 
 ---
