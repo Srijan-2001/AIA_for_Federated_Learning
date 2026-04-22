@@ -11,7 +11,9 @@
 | Field | Details |
 |-------|---------|
 | Category | Cat. 1 — Privacy & Inference |
-| Paper |  |
+| Paper | Attribute Inference Attacks for Federated
+Regression Tasks:
+A Flower-Based Reproduction and Analysis |
 | Framework | Flower (flwr) |
 
 ---
@@ -193,29 +195,7 @@ python main.py \
 | `--device` | `cpu` | `cpu` or `cuda` |
 | `--reproduce_table1` | flag | Run all 3 datasets and produce Table 1 |
 
----
 
-## What Changed vs. Original
-
-| Area | Original | Updated |
-|------|----------|---------|
-| Entry point | `--mode baseline` / `--mode aia` | AIA-only — no `--mode` flag |
-| Dataset choices | MNIST, FMNIST, CIFAR-10/100 + regression | Regression datasets only (`medical_cost`, `income_L`, `income_A`) |
-| Attack choices | `passive`, `active` | `passive`, `active`, `gradient`, `none` |
-| Multi-seed | Not supported | `--seeds 42 43 44` → mean ± std CSV |
-| `model_based_aia.py` | Only in `attacks/` sub-package | Also promoted to top-level with `evaluate_attack_mse()` added |
-| `utils.py` | Basic helpers | + `save_results_csv`, `save_multi_seed_csv`, `plot_accuracy_loss_curves`, `plot_aia_comparison` |
-| `fl_client.py` | Minimal checkpoint stub | Full checkpoint save/load with round-indexed metadata |
-| `fl_server.py` | Basic FedAvg strategy | Refined active attack injection and eavesdrop logging |
-| **`aia_accuracy_percent` (bug fix)** | **Multiplied ALL float values ×100, inflating `ours_mse` (e.g. 3.22 → 321.96)** | **Only accuracy-fraction keys (`ours`, `global_model`, `grad_passive`, `final_accuracy`) scaled ×100; MSE/loss/cost stored at true scale** |
-| **`table1_reproduction` output** | **JSON only** | **JSON + CSV (`table1_reproduction.csv`) — one flat row per dataset × attack variant** |
-| **`fl_client.py` evaluate metric key** | **Sent MSE under `"accuracy"` key; server interpreted raw MSE as a classification accuracy fraction** | **Now sent under `"mse_loss"` key; server reads the correct key** |
-| **`fl_server.py` convergence threshold** | **`avg_acc >= 0.80` — fired at round 1 for medical_cost (MSE 0.79) or never for income_L (MSE > 1)** | **Loss-decrease threshold: first round where MSE ≤ 95% of round-1 MSE** |
-| **`fl_server.py` communication cost** | **`n_clients_est = 1` — always counted only 1 client regardless of federation size** | **`n_clients_est = self.min_fit_clients` — uses actual participating client count** |
-| **`fl_server.py` active attacker init** | **Initialised at `active_start_round - 1`; skipped silently when `active_start_round == 1`** | **Also initialises at `active_start_round` itself as a fallback for the edge case** |
-| **`main.py` CSV `final_accuracy_pct`** | **`final_mse × 100` written as a percentage (e.g. 82053.38%)** | **Renamed to `final_mse` and stored at its raw value** |
-
----
 
 ## Output Files
 
